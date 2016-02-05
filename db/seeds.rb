@@ -11,3 +11,8 @@ Project.create name: 'Time tracking app', description: "it helps you track your 
 Project.create name: 'Recipes', description: "there are many good ones"
 Project.create name: 'Exercise', description: "at least an hour a day"
 Project.create name: 'Meditate', description: "it's good for concentration"
+
+Entry.create project_id: 4, hours: 6, minutes: 0, comments: "awesome", date: Date.today
+Entry.create project_id: 5, hours: 3, minutes: 30, comments: "super cool", date: Date.today
+Entry.create project_id: 2, hours: 2, minutes: 15, comments: "not enough time", date: Date.yesterday
+Entry.create project_id: 3, hours: 10, minutes: 45, comments: "too much time", date: Date.yesterday

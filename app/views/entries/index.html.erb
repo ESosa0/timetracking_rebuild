@@ -2,13 +2,14 @@
 <ul>
   <% @entries.each do |entry| %>
     <li>
-    <p>
-    <%= entry.date.strftime('%a %d %b %Y') %>
-    <br>
-    <%= entry.hours %> hours and <%= entry.minutes %> minutes 
-    <br>
-    -- <%= entry.comments %> --
-    </p>
+      <p>
+      <%= entry.date.strftime('%a %d %b %Y') %>
+      <br>
+      <%= entry.hours %> hours and <%= entry.minutes %> minutes 
+      <br>
+      -- <%= entry.comments %> --
+      </p>
     </li>
+    <%= @total %> hours worked this month
   <% end %>
 </ul>

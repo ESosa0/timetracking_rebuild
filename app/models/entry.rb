@@ -1,9 +1,11 @@
 class Entry < ActiveRecord::Base
   belongs_to :project
-   def self.calculate_hours(id)
-    @project = Project.find(id)
-   
-    @entries = @project.entries.where("created_at > ?", Date.today.midnight - 1.month)
+  validates :hours, presence: true, numericality: true 
+  validates :minutes, presence: true, numericality: true
+  validates :date, presence: true
+  validates :project, presence: true
+   def self.calculate_hours(project)
+    @entries = project.entries.where("created_at > ?", 1.month.ago)
     total = 0
     @entries.each do |entry|
       total += entry.hours*60 + entry.minutes

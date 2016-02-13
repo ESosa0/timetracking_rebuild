@@ -1,4 +1,7 @@
 <h1><%= @project.name %></h1>
+
+<h2><%= @total %> hours worked this month </h2>
+
 <ul>
   <% @entries.each do |entry| %>
     <li>
@@ -10,6 +13,5 @@
       -- <%= entry.comments %> --
       </p>
     </li>
-    <%= @total %> hours worked this month
   <% end %>
 </ul>

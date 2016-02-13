@@ -1,0 +1,19 @@
+<h1> Project: <%= @project.name %> </h1>
+<h3>Create New Entry</h3> 
+
+
+<% if @entry.errors.any? %>
+  <% @errors.each do |error| %> 
+    <ul> <span style="color:red"><%= error %> </span> </ul>
+  <% end %>
+<% end %>
+
+<%= form_for [@project, @entry] do |f| %>
+
+  <p><%= f.label :hours %> <%= f.text_field :hours %> </p>
+  <p><%= f.label :minutes %> <%= f.text_field :minutes %> </p>
+  <p><%= f.label :date %> <%= f.date_field :date %> </p>
+
+  <%= f.submit 'Save' %>
+
+<% end %>

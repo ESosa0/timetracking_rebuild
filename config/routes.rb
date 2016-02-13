@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # get '/projects/:id' => 'projects#show'
   # get 'projects/:project_id/entries/' => 'entries#index'
 
-  resources :projects do
-    resources :entries
+  resources :projects, only: [:index, :show, :new, :create] do
+    resources :entries, only: [:index, :new, :create]
   end
 
 end

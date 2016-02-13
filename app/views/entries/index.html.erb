@@ -2,6 +2,8 @@
 
 <h2><%= @total %> hours worked this month </h2>
 
+<%=link_to("Create new entry", new_project_entry_path) %>
+
 <ul>
   <% @entries.each do |entry| %>
     <li>
@@ -15,3 +17,7 @@
     </li>
   <% end %>
 </ul>
+
+
+
+

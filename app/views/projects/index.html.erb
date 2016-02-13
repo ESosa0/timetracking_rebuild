@@ -1,8 +1,15 @@
 <h1>Projects</h1>
 
+<h3> <%= link_to("Create new project", new_project_path)%> </h3>
+
 <% @projects.each do |project| %>
   <ul>
-  <li><h4><%= project.name %></h4>
-  <%= project.description %> </li>
+    <li> 
+    <h4><%= link_to(project.name, project_entries_path(project)) %></h4>
+      <% if project.description.present? %> 
+        <%= project.description %>
+      <% end %>
+    </li>
+    
   </ul>
 <% end %>
